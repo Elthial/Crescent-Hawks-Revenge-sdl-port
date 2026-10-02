@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Original - Verified"><UniqueIdentifier>{82F6E90D-9877-47E9-88CE-C0EB62BA427B}</UniqueIdentifier></Filter>
+    <Filter Include="SDL Boundary"><UniqueIdentifier>{22088CE5-A220-4918-B271-BA223E0993B8}</UniqueIdentifier></Filter>
+    <Filter Include="Headers"><UniqueIdentifier>{D23DA502-9FD7-4FB5-B9FC-BA5F2BD5FE58}</UniqueIdentifier></Filter>
+    <Filter Include="Build"><UniqueIdentifier>{0AE495FC-905D-4D89-8344-F9204210327E}</UniqueIdentifier></Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Original\REVENGE_0800_GRAPHICS_RUNTIME.c"><Filter>Original - Verified</Filter></ClCompile>
+    <ClCompile Include="src\Original\Graphics\REVENGE_3005_TACTICAL_SPRITE.c"><Filter>Original - Verified</Filter></ClCompile>
+    <ClCompile Include="src\Original\Tactical\REVENGE_24C5_OVERVIEW_MAP.c"><Filter>Original - Verified</Filter></ClCompile>
+    <ClCompile Include="src\Original\Input\REVENGE_3037_KEYBOARD.c"><Filter>Original - Verified</Filter></ClCompile>
+    <ClCompile Include="src\Original\IO\REVENGE_3327_DOS_CONSOLE.c"><Filter>Original - Verified</Filter></ClCompile>
+    <ClCompile Include="src\Original\Graphics\REVENGE_3329_VIDEO_REGION_COPY.c"><Filter>Original - Verified</Filter></ClCompile>
+    <ClCompile Include="src\Original\Text\REVENGE_3338_TEXT_WINDOW_SELECT.c"><Filter>Original - Verified</Filter></ClCompile>
+    <ClCompile Include="src\Original\Text\REVENGE_3349_TEXT_WINDOW_RESET.c"><Filter>Original - Verified</Filter></ClCompile>
+    <ClCompile Include="src\Original\Graphics\REVENGE_334A_VERTICAL_RETRACE.c"><Filter>Original - Verified</Filter></ClCompile>
+    <ClCompile Include="src\Original\Graphics\REVENGE_334D_TEXT_WINDOW_FRAME.c"><Filter>Original - Verified</Filter></ClCompile>
+    <ClCompile Include="src\Original\Graphics\REVENGE_3365_CLIPPED_PRIMITIVES.c"><Filter>Original - Verified</Filter></ClCompile>
+    <ClCompile Include="src\Original\Graphics\REVENGE_337C_RECTANGLE_OUTLINE.c"><Filter>Original - Verified</Filter></ClCompile>
+    <ClCompile Include="src\Original\Graphics\REVENGE_3386_FRAME_TILES.c"><Filter>Original - Verified</Filter></ClCompile>
+    <ClCompile Include="src\Original\Graphics\REVENGE_3471_RECTANGLE_FILL.c"><Filter>Original - Verified</Filter></ClCompile>
+    <ClCompile Include="src\Original\Text\REVENGE_3477_FONT.c"><Filter>Original - Verified</Filter></ClCompile>
+    <ClCompile Include="src\Original\Utility\REVENGE_34C6_RANDOM_RANGE.c"><Filter>Original - Verified</Filter></ClCompile>
+    <ClCompile Include="src\Original\Input\REVENGE_34C8_NAVIGATION_KEY.c"><Filter>Original - Verified</Filter></ClCompile>
+    <ClCompile Include="src\Original\Input\REVENGE_34E6_UI_REGION_POLL.c"><Filter>Original - Verified</Filter></ClCompile>
+    <ClCompile Include="src\Original\Input\REVENGE_3568_UI_REGION_LOOP.c"><Filter>Original - Verified</Filter></ClCompile>
+    <ClCompile Include="src\Original\Text\REVENGE_356D_TEXT_WINDOW_CLEAR.c"><Filter>Original - Verified</Filter></ClCompile>
+    <ClCompile Include="src\Original\Text\REVENGE_356F_TEXT_RENDER.c"><Filter>Original - Verified</Filter></ClCompile>
+    <ClCompile Include="src\Original\Input\REVENGE_35AB_UI_REGION_SETUP.c"><Filter>Original - Verified</Filter></ClCompile>
+    <ClCompile Include="src\Original\UI\REVENGE_35CA_UI_REGION_HIGHLIGHT.c"><Filter>Original - Verified</Filter></ClCompile>
+    <ClCompile Include="src\Original\Text\REVENGE_35CE_FORMATTED_TEXT.c"><Filter>Original - Verified</Filter></ClCompile>
+    <ClCompile Include="src\Original\Audio\REVENGE_3717_PC_SPEAKER_CONVERSION.c"><Filter>Original - Verified</Filter></ClCompile>
+    <ClCompile Include="src\Original\IO\REVENGE_39D9_SYSTEM_TIME.c"><Filter>Original - Verified</Filter></ClCompile>
+    <ClCompile Include="src\Original\IO\REVENGE_39E3_INTERRUPT_VECTOR.c"><Filter>Original - Verified</Filter></ClCompile>
+    <ClCompile Include="src\Original\REVENGE_4184_TACTICAL_GRAPHICS_DATA.c"><Filter>Original - Verified</Filter></ClCompile>
+    <ClCompile Include="src\Original\REVENGE_426A_ENCODED_SPRITE_DATA.c"><Filter>Original - Verified</Filter></ClCompile>
+    <ClCompile Include="src\SDL\audio.c"><Filter>SDL Boundary</Filter></ClCompile>
+    <ClCompile Include="src\SDL\diagnostic.c"><Filter>SDL Boundary</Filter></ClCompile>
+    <ClCompile Include="src\SDL\entry.c"><Filter>SDL Boundary</Filter></ClCompile>
+    <ClCompile Include="src\SDL\host_config.c"><Filter>SDL Boundary</Filter></ClCompile>
+    <ClCompile Include="src\SDL\io.c"><Filter>SDL Boundary</Filter></ClCompile>
+    <ClCompile Include="src\SDL\platform.c"><Filter>SDL Boundary</Filter></ClCompile>
+    <ClCompile Include="src\SDL\system.c"><Filter>SDL Boundary</Filter></ClCompile>
+    <ClInclude Include="src\Original\REVENGE.h"><Filter>Headers</Filter></ClInclude>
+    <ClInclude Include="include\revenge\audio.h"><Filter>Headers</Filter></ClInclude>
+    <ClInclude Include="include\revenge\dos.h"><Filter>Headers</Filter></ClInclude>
+    <ClInclude Include="include\revenge\input.h"><Filter>Headers</Filter></ClInclude>
+    <ClInclude Include="include\revenge\interrupts.h"><Filter>Headers</Filter></ClInclude>
+    <ClInclude Include="include\revenge\original_data.h"><Filter>Headers</Filter></ClInclude>
+    <ClInclude Include="include\revenge\original\io_data.h"><Filter>Headers</Filter></ClInclude>
+    <ClInclude Include="include\revenge\original\input_data.h"><Filter>Headers</Filter></ClInclude>
+    <ClInclude Include="include\revenge\original\resource_data.h"><Filter>Headers</Filter></ClInclude>
+    <ClInclude Include="include\revenge\platform_backend.h"><Filter>Headers</Filter></ClInclude>
+    <ClInclude Include="include\revenge\types.h"><Filter>Headers</Filter></ClInclude>
+    <ClInclude Include="include\revenge\video.h"><Filter>Headers</Filter></ClInclude>
+    <ClInclude Include="src\SDL\host_config.h"><Filter>Headers</Filter></ClInclude>
+    <None Include="Build.ps1"><Filter>Build</Filter></None>
+    <None Include="CMakeLists.txt"><Filter>Build</Filter></None>
+    <None Include="README.md"><Filter>Build</Filter></None>
+  </ItemGroup>
+</Project>

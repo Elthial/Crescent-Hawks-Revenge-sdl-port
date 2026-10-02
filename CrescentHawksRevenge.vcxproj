@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64"><Configuration>Debug</Configuration><Platform>x64</Platform></ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64"><Configuration>Release</Configuration><Platform>x64</Platform></ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{48B75816-9A12-4C16-95ED-B890E69E6A6B}</ProjectGuid>
+    <Keyword>MakeFileProj</Keyword>
+    <RootNamespace>CrescentHawksRevenge</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType><UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType><UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <NMakeBuildCommandLine>powershell.exe -NoProfile -ExecutionPolicy Bypass -File &quot;$(ProjectDir)Build.ps1&quot; -Configuration Debug -Target Revenge</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>powershell.exe -NoProfile -ExecutionPolicy Bypass -File &quot;$(ProjectDir)Build.ps1&quot; -Configuration Debug -Target Revenge</NMakeReBuildCommandLine>
+    <NMakeOutput>$(ProjectDir)build\Revenge.exe</NMakeOutput>
+    <LocalDebuggerCommand>$(NMakeOutput)</LocalDebuggerCommand>
+    <LocalDebuggerWorkingDirectory>$(ProjectDir)assets\original-game</LocalDebuggerWorkingDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <NMakeBuildCommandLine>powershell.exe -NoProfile -ExecutionPolicy Bypass -File &quot;$(ProjectDir)Build.ps1&quot; -Configuration Release -Target Revenge</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>powershell.exe -NoProfile -ExecutionPolicy Bypass -File &quot;$(ProjectDir)Build.ps1&quot; -Configuration Release -Target Revenge</NMakeReBuildCommandLine>
+    <NMakeOutput>$(ProjectDir)build-release\Revenge.exe</NMakeOutput>
+    <LocalDebuggerCommand>$(NMakeOutput)</LocalDebuggerCommand>
+    <LocalDebuggerWorkingDirectory>$(ProjectDir)assets\original-game</LocalDebuggerWorkingDirectory>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NMakeIncludeSearchPath>$(ProjectDir)src\Original;$(ProjectDir)include;$(ProjectDir)src\SDL;$(ProjectDir)build\_deps\sdl3-src\include;$(ProjectDir)build-release\_deps\sdl3-src\include;$(ProjectDir)build\_deps\sdl3-build\include-revision;$(ProjectDir)build-release\_deps\sdl3-build\include-revision</NMakeIncludeSearchPath>
+    <NMakePreprocessorDefinitions>CHR_SDL_PLATFORM=1</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Original\REVENGE_0800_GRAPHICS_RUNTIME.c" />
+    <ClCompile Include="src\Original\Graphics\REVENGE_3005_TACTICAL_SPRITE.c" />
+    <ClCompile Include="src\Original\Tactical\REVENGE_24C5_OVERVIEW_MAP.c" />
+    <ClCompile Include="src\Original\Input\REVENGE_3037_KEYBOARD.c" />
+    <ClCompile Include="src\Original\IO\REVENGE_3327_DOS_CONSOLE.c" />
+    <ClCompile Include="src\Original\Graphics\REVENGE_3329_VIDEO_REGION_COPY.c" />
+    <ClCompile Include="src\Original\Text\REVENGE_3338_TEXT_WINDOW_SELECT.c" />
+    <ClCompile Include="src\Original\Text\REVENGE_3349_TEXT_WINDOW_RESET.c" />
+    <ClCompile Include="src\Original\Graphics\REVENGE_334A_VERTICAL_RETRACE.c" />
+    <ClCompile Include="src\Original\Graphics\REVENGE_334D_TEXT_WINDOW_FRAME.c" />
+    <ClCompile Include="src\Original\Graphics\REVENGE_3365_CLIPPED_PRIMITIVES.c" />
+    <ClCompile Include="src\Original\Graphics\REVENGE_337C_RECTANGLE_OUTLINE.c" />
+    <ClCompile Include="src\Original\Graphics\REVENGE_3386_FRAME_TILES.c" />
+    <ClCompile Include="src\Original\Graphics\REVENGE_3471_RECTANGLE_FILL.c" />
+    <ClCompile Include="src\Original\Text\REVENGE_3477_FONT.c" />
+    <ClCompile Include="src\Original\Utility\REVENGE_34C6_RANDOM_RANGE.c" />
+    <ClCompile Include="src\Original\Input\REVENGE_34C8_NAVIGATION_KEY.c" />
+    <ClCompile Include="src\Original\Input\REVENGE_34E6_UI_REGION_POLL.c" />
+    <ClCompile Include="src\Original\Input\REVENGE_3568_UI_REGION_LOOP.c" />
+    <ClCompile Include="src\Original\Text\REVENGE_356D_TEXT_WINDOW_CLEAR.c" />
+    <ClCompile Include="src\Original\Text\REVENGE_356F_TEXT_RENDER.c" />
+    <ClCompile Include="src\Original\Input\REVENGE_35AB_UI_REGION_SETUP.c" />
+    <ClCompile Include="src\Original\UI\REVENGE_35CA_UI_REGION_HIGHLIGHT.c" />
+    <ClCompile Include="src\Original\Text\REVENGE_35CE_FORMATTED_TEXT.c" />
+    <ClCompile Include="src\Original\Audio\REVENGE_3717_PC_SPEAKER_CONVERSION.c" />
+    <ClCompile Include="src\Original\IO\REVENGE_39D9_SYSTEM_TIME.c" />
+    <ClCompile Include="src\Original\IO\REVENGE_39E3_INTERRUPT_VECTOR.c" />
+    <ClCompile Include="src\Original\REVENGE_4184_TACTICAL_GRAPHICS_DATA.c" />
+    <ClCompile Include="src\Original\REVENGE_426A_ENCODED_SPRITE_DATA.c" />
+    <ClCompile Include="src\SDL\audio.c" />
+    <ClCompile Include="src\SDL\diagnostic.c" />
+    <ClCompile Include="src\SDL\entry.c" />
+    <ClCompile Include="src\SDL\host_config.c" />
+    <ClCompile Include="src\SDL\io.c" />
+    <ClCompile Include="src\SDL\platform.c" />
+    <ClCompile Include="src\SDL\system.c" />
+    <ClInclude Include="src\Original\REVENGE.h" />
+    <ClInclude Include="include\revenge\audio.h" />
+    <ClInclude Include="include\revenge\dos.h" />
+    <ClInclude Include="include\revenge\input.h" />
+    <ClInclude Include="include\revenge\interrupts.h" />
+    <ClInclude Include="include\revenge\original_data.h" />
+    <ClInclude Include="include\revenge\original\io_data.h" />
+    <ClInclude Include="include\revenge\original\input_data.h" />
+    <ClInclude Include="include\revenge\original\resource_data.h" />
+    <ClInclude Include="include\revenge\platform_backend.h" />
+    <ClInclude Include="include\revenge\types.h" />
+    <ClInclude Include="include\revenge\video.h" />
+    <ClInclude Include="src\SDL\host_config.h" />
+    <None Include="Build.ps1" />
+    <None Include="CMakeLists.txt" />
+    <None Include="README.md" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

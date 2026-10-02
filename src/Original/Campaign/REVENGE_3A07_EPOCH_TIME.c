@@ -1,0 +1,61 @@
+// Reconstructed original local-time to epoch converter (segment 3A07).
+
+#include "REVENGE.h"
+#include "revenge/original_data.h"
+
+word16 IsDaylightSavingTime(
+	word16 yearsSince1970, word16 month, word16 dayOrDayOfYear, byte hour);
+
+#define SECONDS_PER_MINUTE       0x0000003CUL
+#define SECONDS_PER_HOUR         0x00000E10UL
+#define SECONDS_PER_DAY          0x00015180UL
+#define SECONDS_PER_COMMON_YEAR  0x01E13380UL
+#define SECONDS_PER_FOUR_YEARS   0x07861F80UL
+#define EPOCH_SECONDS_AT     0x12CEA600UL
+
+// 3A07:0001: convert the DOS local date/time fields to the runtime's signed-
+// timezone-adjusted Unix epoch value. The original returns this in DX:AX.
+uint32 ConvertLocalDateTimeToEpochSeconds(
+	const DOS_Date *date,
+	const DOS_Time *time)
+{
+	int16 yearsSince1980;
+	word16 remainingYears;
+	word16 monthIndex;
+	word16 dayOfYear;
+	word16 hourOfYear;
+	int32 timezoneOffsetSeconds;
+	uint32 epochSeconds;
+
+	InitializeTimezoneFromEnvironment();
+	timezoneOffsetSeconds = (int32)MAKE_DWORD(
+		TimezoneOffsetHighWord,
+		TimezoneOffsetLowWord);
+	epochSeconds = (uint32)(timezoneOffsetSeconds + EPOCH_SECONDS_AT);
+
+	yearsSince1980 = (int16)date->year - 0x07BC;
+	epochSeconds += (uint32)(yearsSince1980 >> 0x02) * SECONDS_PER_FOUR_YEARS;
+	remainingYears = yearsSince1980 & 0x03;
+	epochSeconds += (uint32)remainingYears * SECONDS_PER_COMMON_YEAR;
+	if (remainingYears != 0x00)
+		epochSeconds += SECONDS_PER_DAY;
+
+	dayOfYear = 0x00;
+	for (monthIndex = 0x00; monthIndex + 0x01 < date->month; ++monthIndex)
+		dayOfYear += MonthLengthTable[monthIndex];
+	dayOfYear += date->day - 0x01;
+	if (date->month > 0x02 && (date->year & 0x03) == 0x00)
+		++dayOfYear;
+
+	hourOfYear = dayOfYear * 0x18 + time->hour;
+	if (DaylightSavingEnabled != FALSE
+		&& IsDaylightSavingTime(
+			date->year - 0x07B2, 0x00, dayOfYear, time->hour) != FALSE)
+		--hourOfYear;
+
+	epochSeconds += (uint32)hourOfYear * SECONDS_PER_HOUR;
+	epochSeconds += (uint32)time->minute * SECONDS_PER_MINUTE;
+	epochSeconds += time->second;
+	return epochSeconds;
+}
+
